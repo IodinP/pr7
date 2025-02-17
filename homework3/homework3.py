@@ -1,8 +1,19 @@
 # вариант 3:пятеричная
-def solve_equation(a, b, c):
-    return a + b * 4 - c
-a = float(input("Введите значение для a: "))
-b = float(input("Введите значение для b: "))
-c = float(input("Введите значение для c: "))
-result = solve_equation(a, b, c)
-print(f"Результат уравнения x = a + b * 4 - c: {result}")
+def decimal_to_quinary(n):
+    if n == 0:
+        return "0"
+    
+    result = ""
+    while n > 0:
+        result = str(n % 5) + result
+        n //= 5
+    return result
+
+
+decimal_number = int(input("Введите десятичное число: "))
+
+quinary = decimal_to_quinary(decimal_number)
+
+
+print(f"Пятеричное представление: {quinary}")
+
